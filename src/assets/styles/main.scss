@@ -1,0 +1,28 @@
+//如果要修改variables和utilities的話 引入順序如下 不可變更順序
+@import "bootstrap/scss/functions";
+@import "./variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "./utilities";
+@import "bootstrap/scss/bootstrap";
+body {
+  font-family: "Noto Serif TC", serif;
+}
+.form-control:focus{
+  box-shadow: 0 0 0 0;
+}
+.text-newsreader{
+  font-family: "Newsreader", serif;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
+.cursor-pointer{
+  cursor: pointer;
+}
