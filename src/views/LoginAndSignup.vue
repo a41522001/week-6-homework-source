@@ -66,8 +66,8 @@
   const mode = ref<number>(0);
   const text = computed(() => mode.value === 0 ? "註冊" : "登入")
   const handleMode = () => {
-    if(mode.value === 0) mode.value = 1;
-    else mode.value = 0;
+    window.scrollTo(0, 0)
+    mode.value = mode.value === 0 ? 1 : 0;
   }
 </script>
 

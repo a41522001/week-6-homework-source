@@ -7,7 +7,7 @@
       pb-8 pb-sm-0 text-center text-sm-start">
         <p class="mb-3 fs-6 fw-bold lh-sm text-white">獻給新世代的生活風格誌</p>
         <p class="mb-5 fs-2 fw-bold lh-sm text-white">一起探索生活的無限可能</p>
-        <button class="btn btn-accent-200 text-white fw-bold d-flex rounded-pill py-3 px-5">
+        <button class="btn btn-accent-200 text-white fw-bold d-flex rounded-pill py-3 px-5" @click="goToSubscribePage">
           馬上訂閱
           <span class="material-symbols-outlined ms-2">
           arrow_forward
@@ -162,7 +162,7 @@
               <p class="mb-0 ms-1 text-primary-400 fw-semibold">為每個成員量身打造專屬行程</p>
             </li>
           </ul>
-          <button class="btn btn-accent-200 rounded-pill text-white py-3 px-5 fs-6 fw-bold 1h-sm">我想了解</button>
+          <button class="btn btn-accent-200 rounded-pill text-white py-3 px-5 fs-6 fw-bold 1h-sm" @click=goToSubscribePage>我想了解</button>
         </div>
         <div class="col-xl-4 d-flex justify-content-end">
           <img class="d-none d-xl-inline" src="https://github.com/hexschool/2022-web-layout-training/blob/main/2024-week6/bg-2.png?raw=true" alt="bg">      
@@ -513,7 +513,7 @@
         <div class="col-lg-6 d-flex d-lg-block flex-column align-items-center mb-5 mb-lg-0">
           <p class="mb-3 fw-bold fs-6 lh-sm" style="color: #6c757d;">今天又不知道要去哪裡了嗎？</p>
           <h2 class="mb-6 fw-bold fs-3 lh-sm">Vivre 給你意想不到的生活風格提案</h2>
-          <button class="btn btn-accent-200 text-white fw-bold d-flex rounded-pill py-3 px-5">
+          <button class="btn btn-accent-200 text-white fw-bold d-flex rounded-pill py-3 px-5" @click="goToSubscribePage">
             馬上訂閱
             <span class="material-symbols-outlined ms-2">
             arrow_forward
@@ -671,6 +671,7 @@
 
 <script setup lang="ts">
   import { ref, onMounted, onUnmounted } from "vue";
+  import { useRouter } from "vue-router";
   import Swiper from 'swiper';
   import { Autoplay, Navigation } from 'swiper/modules';
   import 'swiper/css';
@@ -684,6 +685,7 @@
     imageUrl? :string;
     imageUrlSm? :string;
   }
+  const router = useRouter();
   const theme = ref<Theme[]>([
     {
       title: "城市漫遊者",
@@ -782,6 +784,9 @@
   onUnmounted(() => {
     window.removeEventListener("resize", updateDebounce)
   })
+  const goToSubscribePage = (): void => {
+    router.push("/subscribe")
+  }
 </script>
 
 <style scoped lang="scss">
